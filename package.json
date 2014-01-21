@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/lazd/gulp-replace.git"
+    "url": "git@github.com:versoul/gulp-data-uri.git"
   },
   "keywords": [
     "gulpplugin",
@@ -28,14 +28,13 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lazd/gulp-replace/issues"
+    "url": "https://github.com/versoul/gulp-data-uri/issues"
   },
   "engines": {
     "node": ">=0.8"
   },
-  "readme": "# gulp-replace [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url]\n> A string replace plugin for gulp 3\n\n## Usage\n\nFirst, install `gulp-replace` as a development dependency:\n\n```shell\nnpm install --save-dev gulp-replace\n```\n\nThen, add it to your `gulpfile.js`:\n\n```javascript\nvar jshint = require('gulp-replace');\n\ngulp.task('templates', function(){\n  gulp.src(['file.txt'])\n    .pipe(replace(/foo(.{3})/g, '$1foo'))\n    .pipe(gulp.dest('build/file.txt'));\n});\n```\n\n\n## API\n\ngulp-replace can be called with a string or regex.\n\n### replace(string, replacement)\n\n#### string\nType: `String`\n\nThe string to search for.\n\n#### replacement\nType: `String`\n\nThe replacement string.\n\n### replace(regex, replace)\n\n*Note:* gulp-replace cannot perform regex replacement on streams.\n\n#### regex\nType: `RegExp`\n\nThe regex pattern to search for. See the [MDN documentation for RegExp] for details.\n\n#### replacement\nType: `String` or `Function`\n\nThe replacement string or function. See the [MDN documentation for String.replace] for details.\n\n\n[MDN documentation for RegExp]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp\n[MDN documentation for String.replace]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_string_as_a_parameter\n\n[travis-url]: http://travis-ci.org/lazd/gulp-replace\n[travis-image]: https://secure.travis-ci.org/lazd/gulp-replace.png?branch=master\n[npm-url]: https://npmjs.org/package/gulp-replace\n[npm-image]: https://badge.fury.io/js/gulp-replace.png\n",
   "readmeFilename": "README.md",
-  "homepage": "https://github.com/lazd/gulp-replace",
+  "homepage": "https://github.com/versoul/gulp-data-uri",
   "_id": "gulp-replace@0.2.0",
   "_from": "gulp-replace@"
 }
