@@ -6,6 +6,7 @@ var gutil = require('gulp-util');
 
 module.exports = function() {
 
+    
     var datauri = function(file, callback) {
         var app_path = path.dirname(module.parent.filename);
         var reg_exp = /url\(['|"](.+)['|"]\)/g;
