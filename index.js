@@ -6,7 +6,6 @@ var gutil = require('gulp-util');
 
 module.exports = function() {
 
-    var search = '', replacement ='';
     var datauri = function(file, callback) {
         var app_path = path.dirname(module.parent.filename);
         var reg_exp = /url\(['|"](.+)['|"]\)/g;
@@ -28,7 +27,7 @@ module.exports = function() {
                     str = str.replace(matches[i].url,('data:image/'+path.extname(filepath).substr(1)+';base64,'+b.toString('base64')));
                 }
                 else{
-                    gutil.log('gulp-data-uri:', gutil.colors.yellow('file not found') + gutil.colors.gray(' (' + filepath + ')'));
+                    gutil.log('gulp-data-uri:', gutil.colors.yellow('file not found and it is passed') + gutil.colors.gray(' (' + filepath + ')'));
                 }
             }
             file.contents = new Buffer(str);

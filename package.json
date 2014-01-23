@@ -4,12 +4,12 @@
   "description": "convert imgs from css to datauri",
   "main": "index.js",
   "dependencies": {
-    "event-stream": "~3.0.18"
+    "event-stream": "~3.0.18",
+    "gulp-util": "~2.2.12"
   },
   "devDependencies": {
     "should": "~2.1.1",
-    "mocha": "~1.15.1",
-    "gulp-util": "~2.0.0"
+    "mocha": "~1.17.1"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha"

@@ -1,0 +1,9 @@
+.Label {
+    width:300px; height:300px; background:url("/fixtures/icon_error.gif");
+}
+.Label2 {
+    width:300px; height:300px; background:url('/fixtures/plus.png');
+}
+.Label3 {
+    width:300px; height:300px; background:url('/fixtures/plus2.png');
+}
