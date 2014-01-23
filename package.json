@@ -9,10 +9,11 @@
   },
   "devDependencies": {
     "should": "~2.1.1",
-    "mocha": "~1.17.1"
+    "mocha": "~1.17.1",
+    "chai": "~1.8.1"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "mocha test/main.js"
   },
   "repository": {
     "type": "git",

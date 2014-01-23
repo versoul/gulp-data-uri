@@ -1,4 +1,4 @@
-
+#gulp-data-uri [![NPM version][npm-image]][npm-url]
 > convert imgs from css to datauri
 
 ## Usage
@@ -20,3 +20,5 @@ gulp.task('templates', function(){
     .pipe(gulp.dest('build/file.txt'));
 });
 ```
+[npm-url]: https://npmjs.org/package/gulp-data-uri
+[npm-image]: https://badge.fury.io/js/gulp-data-uri.png
