@@ -1,4 +1,4 @@
-#gulp-data-uri [![NPM version][npm-image]][npm-url]
+#gulp-data-uri [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url]
 > convert imgs from css to datauri
 
 ## Usage
@@ -20,5 +20,7 @@ gulp.task('templates', function(){
     .pipe(gulp.dest('build/file.txt'));
 });
 ```
+[travis-url]: http://travis-ci.org/lazd/gulp-data-uri
+[travis-image]: https://travis-ci.org/versoul/gulp-data-uri.png?branch=master
 [npm-url]: https://npmjs.org/package/gulp-data-uri
 [npm-image]: https://badge.fury.io/js/gulp-data-uri.png
