@@ -6,7 +6,7 @@ var gutil = require('gulp-util');
 
 module.exports = function() {
 
-    
+
     var datauri = function(file, callback) {
         var app_path = path.dirname(module.parent.filename);
         var reg_exp = /url\(['|"](.+)['|"]\)/g;
@@ -22,13 +22,15 @@ module.exports = function() {
             }
 
             for(var i=0, len=matches.length; i<len; i++){
-                var filepath = app_path+path.normalize(matches[i].url);
-                if (fs.existsSync(filepath)) {
-                    var b = fs.readFileSync(filepath);
-                    str = str.replace(matches[i].url,('data:image/'+path.extname(filepath).substr(1)+';base64,'+b.toString('base64')));
-                }
-                else{
-                    gutil.log('gulp-data-uri:', gutil.colors.yellow('file not found and it is passed') + gutil.colors.gray(' (' + filepath + ')'));
+                if(matches[i].url.indexOf('data:image') === -1){//if find -> image already decoded
+                    var filepath = app_path+path.normalize(matches[i].url);
+                    if (fs.existsSync(filepath)) {
+                        var b = fs.readFileSync(filepath);
+                        str = str.replace(matches[i].url,('data:image/'+path.extname(filepath).substr(1)+';base64,'+b.toString('base64')));
+                    }
+                    else{
+                        gutil.log('gulp-data-uri:', gutil.colors.yellow('file not found and it is passed') + gutil.colors.gray(' (' + filepath + ')'));
+                    }
                 }
             }
             file.contents = new Buffer(str);
