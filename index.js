@@ -8,7 +8,7 @@ module.exports = function() {
 
 
     var datauri = function(file, callback) {
-        var app_path = path.dirname(module.parent.filename);
+        var src_path = path.dirname(file.path);
         var reg_exp = /url\(['|"](.+)['|"]\)/g;
         var isStream = file.contents && typeof file.contents.on === 'function' && typeof file.contents.pipe === 'function';
         var isBuffer = file.contents instanceof Buffer;
@@ -23,7 +23,7 @@ module.exports = function() {
 
             for(var i=0, len=matches.length; i<len; i++){
                 if(matches[i].url.indexOf('data:image') === -1){//if find -> image already decoded
-                    var filepath = app_path+path.normalize(matches[i].url);
+                    var filepath = path.join(src_path, path.normalize(matches[i].url) );
                     if (fs.existsSync(filepath)) {
                         var b = fs.readFileSync(filepath);
                         str = str.replace(matches[i].url,('data:image/'+path.extname(filepath).substr(1)+';base64,'+b.toString('base64')));
